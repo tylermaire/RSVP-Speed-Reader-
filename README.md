@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+<p align="center">
+  <img src="./logo.svg" width="350" alt="RSVP Speed Read Logo">
+</p>
 
-# Run and deploy your AI Studio app
+# RSVP Speed Read
 
-This contains everything you need to run your app locally.
+### Turbocharge Your Focus. Read Faster. Retain More.
 
-View your app in AI Studio: https://ai.studio/apps/drive/18B-PLxYM4iR2Sdtw_P696e9yD4Pp1S61
+**Live Application:** [rsvpspeedread.com](https://rsvpspeedread.com)
 
-## Run Locally
+RSVP Speed Read is a high-performance web application designed for professionals and students who need to digest long documents quickly without sacrificing comprehension. Using **Rapid Serial Visual Presentation (RSVP)** technology and powered by **Google Gemini 3 Flash**, it turns static PDFs into dynamic, focus-driven reading experiences.
 
-**Prerequisites:**  Node.js
+## ✨ Key Features
 
+- **🚀 RSVP Engine:** Read at speeds from 50 to 1000 WPM with an optimized focus point (ORP) indicator.
+- **🧠 AI Document Segmentation:** Automatically breaks large PDFs into logical, readable segments using Gemini 3 Flash.
+- **📝 Automated Retention Quizzes:** Test your comprehension after each segment with AI-generated quizzes.
+- **📄 Academic Citations:** Instant generation of APA7, MLA9, and Chicago citations for your documents.
+- **🧘 Zen Mode:** A distraction-free interface that puts the words front and center.
+- **🌓 Themes:** Choose between Dark, Forest, and Sea themes to reduce eye strain.
+- **🔖 Smart Bookmarking:** Save your progress and jump back into any part of the document instantly.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 🛠 Tech Stack
+
+- **Frontend:** React 19, TypeScript, Tailwind CSS
+- **Icons:** Lucide React
+- **AI Core:** Google Gemini API (Gemini 3 Flash)
+- **Build Tool:** Vite
+- **Deployment:** Vercel
+
+## 👤 Author
+
+**Tyler Maire**
+- **Email:** [tyler.maire1@gmail.com](mailto:tyler.maire1@gmail.com)
+- **Website:** [rsvpspeedread.com](https://rsvpspeedread.com)
+
+---
+*Created with focus and precision.*
