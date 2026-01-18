@@ -1,14 +1,21 @@
 # RSVP Speed Read
 
 <p align="center">
-  <img src="./hero.png" width="100%" alt="RSVP Speed Read Hero Banner" style="border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
+  <img src="./logo.svg" width="400" alt="RSVP Speed Read Logo">
 </p>
 
-### Turbocharge Your Focus. Read Faster. Retain More.
+<p align="center">
+  <b>Turbocharge Your Focus. Read Faster. Retain More.</b><br>
+  <i>Powered by RSVP Technology and Google Gemini 3 Flash</i>
+</p>
 
-**Live Application:** [rsvpspeedread.com](https://rsvpspeedread.com)
+<p align="center">
+  <a href="https://rsvpspeedread.com"><strong>🚀 Launch Live App</strong></a>
+</p>
 
-RSVP Speed Read is a high-performance web application designed for professionals and students who need to digest long documents quickly without sacrificing comprehension. Using **Rapid Serial Visual Presentation (RSVP)** technology and powered by **Google Gemini 3 Flash**, it turns static PDFs into dynamic, focus-driven reading experiences.
+---
+
+RSVP Speed Read is a high-performance web application designed for professionals and students who need to digest long documents quickly without sacrificing comprehension. It turns static PDFs into dynamic, focus-driven reading experiences.
 
 ## ✨ Key Features
 
