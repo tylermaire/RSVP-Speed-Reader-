@@ -6,7 +6,7 @@ import { analyzeDocumentStructure, extractSegmentText, generateQuiz } from './se
 import ReaderDisplay from './components/ReaderDisplay';
 
 const Logo: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 400 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 600 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <linearGradient id="logo-main-grad" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stopColor="#4f46e5" />
@@ -25,8 +25,8 @@ const Logo: React.FC<{ className?: string }> = ({ className }) => (
     <path d="M100 25 L180 60 L100 95 L120 60 Z" fill="url(#logo-main-grad)" opacity="0.3" />
     <path d="M125 20 L210 60 L125 100 L150 60 Z" fill="url(#logo-main-grad)" opacity="0.5" />
     <path d="M155 15 L250 60 L155 105 L185 60 Z" fill="url(#logo-main-grad)" filter="url(#logo-neon-glow)" />
-    <text x="270" y="68" fill="white" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 900, fontSize: '52px', letterSpacing: '-2px' }}>RSVP</text>
-    <text x="270" y="95" fill="#94a3b8" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontStyle: 'italic', fontSize: '20px', letterSpacing: '4px' }}>SPEED READ</text>
+    <text x="260" y="68" fill="white" style={{ fontFamily: 'Inter, Arial, sans-serif', fontWeight: 900, fontSize: '52px', letterSpacing: '-2px' }}>RSVP</text>
+    <text x="260" y="95" fill="#94a3b8" style={{ fontFamily: 'Inter, Arial, sans-serif', fontWeight: 300, fontStyle: 'italic', fontSize: '20px', letterSpacing: '4px' }}>SPEED READ</text>
   </svg>
 );
 

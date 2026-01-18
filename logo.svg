@@ -1,4 +1,4 @@
-<svg viewBox="0 0 400 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="main-grad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#4f46e5" />
@@ -32,7 +32,7 @@
   <!-- Feathered Layer 3 (Primary Focus) -->
   <path d="M155 15 L250 60 L155 105 L185 60 Z" fill="url(#main-grad)" filter="url(#neon-glow)" />
   
-  <!-- RSVP TEXT -->
-  <text x="270" y="68" fill="white" font-family="Arial, sans-serif" font-weight="900" font-size="52" letter-spacing="-2">RSVP</text>
-  <text x="270" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-weight="300" font-style="italic" font-size="20" letter-spacing="4">SPEED READ</text>
+  <!-- RSVP TEXT - Adjusted X to ensure no clipping -->
+  <text x="260" y="68" fill="white" font-family="Arial, sans-serif" font-weight="900" font-size="52" letter-spacing="-2" text-anchor="start">RSVP</text>
+  <text x="260" y="95" fill="#94a3b8" font-family="Arial, sans-serif" font-weight="300" font-style="italic" font-size="20" letter-spacing="4" text-anchor="start">SPEED READ</text>
 </svg>
