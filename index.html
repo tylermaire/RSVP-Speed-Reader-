@@ -12,7 +12,7 @@
     <meta name="theme-color" content="#020617">
     <link rel="manifest" href="/manifest.json">
     
-    <!-- Canonical URL - Points to the preferred version of the site -->
+    <!-- Canonical URL -->
     <link rel="canonical" href="https://rsvpspeedread.com" />
 
     <!-- Open Graph / Social Media -->
@@ -31,7 +31,7 @@
             background-color: #020617;
             color: #f8fafc;
             margin: 0;
-            overscroll-behavior-y: contain; /* Prevents "pull to refresh" on mobile */
+            overscroll-behavior-y: contain;
             overflow-x: hidden;
         }
         .mono {
@@ -43,10 +43,7 @@
         ::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
         ::-webkit-scrollbar-thumb:hover { background: #334155; }
         
-        /* Mobile tap highlight removal */
         * { -webkit-tap-highlight-color: transparent; }
-
-        /* Ensure smooth transitions */
         .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
     </style>
 <script type="importmap">

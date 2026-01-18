@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { Play, Pause, RotateCcw, Upload, Sliders, BrainCircuit, FileText, Bookmark as BookmarkIcon, Trash2, History, CheckCircle2, XCircle, RefreshCw, Palette, Quote, Copy, Check, AlertCircle, Layers, ChevronRight, Maximize2, Minimize2, Settings2, Mail, User } from 'lucide-react';
 import { Token, Quiz, Bookmark, Theme, Citation, DocumentPart } from './types';
@@ -7,25 +6,27 @@ import { analyzeDocumentStructure, extractSegmentText, generateQuiz } from './se
 import ReaderDisplay from './components/ReaderDisplay';
 
 const Logo: React.FC<{ className?: string }> = ({ className }) => (
-  <svg viewBox="0 0 240 80" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 400 120" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="feather-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#6366f1" />
-        <stop offset="100%" stopColor="#a855f7" />
+      <linearGradient id="logo-main-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#4f46e5" />
+        <stop offset="50%" stopColor="#9333ea" />
+        <stop offset="100%" stopColor="#ec4899" />
       </linearGradient>
-      <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur stdDeviation="2" result="blur" />
+      <filter id="logo-neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="3" result="blur" />
         <feComposite in="SourceGraphic" in2="blur" operator="over" />
       </filter>
     </defs>
-    {/* Speed Lines */}
-    <rect x="10" y="35" width="15" height="3" rx="1.5" fill="#6366f1" opacity="0.6" />
-    <rect x="5" y="44" width="22" height="3" rx="1.5" fill="#8b5cf6" opacity="0.8" />
-    
-    {/* Feathered Arrow Layers */}
-    <path d="M45 20 L75 45 L45 70 L55 45 Z" fill="url(#feather-grad)" opacity="0.4" />
-    <path d="M55 15 L90 45 L55 75 L68 45 Z" fill="url(#feather-grad)" opacity="0.7" />
-    <path d="M70 10 L110 45 L70 80 L85 45 Z" fill="url(#feather-grad)" filter="url(#glow)" />
+    <rect x="20" y="52" width="20" height="4" rx="2" fill="#4f46e5" opacity="0.4" />
+    <rect x="35" y="65" width="25" height="4" rx="2" fill="#9333ea" opacity="0.6" />
+    <rect x="15" y="78" width="15" height="4" rx="2" fill="#ec4899" opacity="0.5" />
+    <path d="M80 30 L160 60 L80 90 L100 60 Z" fill="url(#logo-main-grad)" opacity="0.2" />
+    <path d="M100 25 L180 60 L100 95 L120 60 Z" fill="url(#logo-main-grad)" opacity="0.3" />
+    <path d="M125 20 L210 60 L125 100 L150 60 Z" fill="url(#logo-main-grad)" opacity="0.5" />
+    <path d="M155 15 L250 60 L155 105 L185 60 Z" fill="url(#logo-main-grad)" filter="url(#logo-neon-glow)" />
+    <text x="270" y="68" fill="white" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 900, fontSize: '52px', letterSpacing: '-2px' }}>RSVP</text>
+    <text x="270" y="95" fill="#94a3b8" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 300, fontStyle: 'italic', fontSize: '20px', letterSpacing: '4px' }}>SPEED READ</text>
   </svg>
 );
 
@@ -247,11 +248,7 @@ const App: React.FC = () => {
         {/* Header - Hides in Zen Mode */}
         <header className={`w-full mb-10 flex items-center justify-between transition-all duration-500 ${isZenMode ? 'opacity-0 -translate-y-10 pointer-events-none absolute' : 'opacity-100 translate-y-0'}`}>
           <div className="flex items-center gap-1 group">
-            <Logo className="h-16 w-auto drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" />
-            <div className="flex flex-col ml-[-15px]">
-              <h1 className="text-3xl font-black tracking-tight text-white leading-none">RSVP</h1>
-              <p className="text-sm text-slate-400 font-light italic tracking-[0.15em] mt-1.5 pl-0.5">Speed Read</p>
-            </div>
+            <Logo className="h-20 w-auto drop-shadow-2xl group-hover:scale-105 transition-transform duration-500" />
           </div>
           <div className="flex items-center gap-4">
             <div className={`${themeStyles.surface} border ${themeStyles.border} p-1 rounded-full flex gap-1 shadow-inner`}>
