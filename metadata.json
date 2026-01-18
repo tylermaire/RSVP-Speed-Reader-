@@ -1,7 +1,5 @@
 {
   "name": "RSVP Speed Reader Pro",
   "description": "A high-performance speed reading application using Rapid Serial Visual Presentation (RSVP) with AI-powered text extraction and comprehension tools.",
-  "requestFramePermissions": [
-    "camera"
-  ]
+  "requestFramePermissions": []
 }

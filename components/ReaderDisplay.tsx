@@ -10,9 +10,9 @@ interface ReaderDisplayProps {
 
 const ReaderDisplay: React.FC<ReaderDisplayProps> = ({ token, fontSize, theme }) => {
   const themeColors = {
-    dark: { bg: 'bg-slate-900', border: 'border-slate-700', guide: 'bg-red-500/20', focus: 'text-red-500', text: 'text-slate-100' },
-    forest: { bg: 'bg-[#0d1a0f]', border: 'border-emerald-900/50', guide: 'bg-emerald-500/20', focus: 'text-emerald-400', text: 'text-emerald-50' },
-    sea: { bg: 'bg-[#0a1a26]', border: 'border-sky-900/50', guide: 'bg-sky-500/20', focus: 'text-sky-400', text: 'text-sky-50' }
+    dark: { bg: 'bg-slate-900', border: 'border-slate-700', guide: 'bg-pink-500/10', focus: 'text-pink-500', text: 'text-slate-100', glow: 'bg-blue-500' },
+    forest: { bg: 'bg-[#0d1a0f]', border: 'border-emerald-900/50', guide: 'bg-emerald-500/20', focus: 'text-emerald-400', text: 'text-emerald-50', glow: 'bg-emerald-500' },
+    sea: { bg: 'bg-[#0a1a26]', border: 'border-sky-900/50', guide: 'bg-sky-500/20', focus: 'text-sky-400', text: 'text-sky-50', glow: 'bg-sky-500' }
   }[theme];
 
   if (!token) {
@@ -45,9 +45,9 @@ const ReaderDisplay: React.FC<ReaderDisplayProps> = ({ token, fontSize, theme })
           {prefix}
         </div>
         <div className="relative flex items-center justify-center">
-          {/* Subtle focus highlight circle */}
-          <div className={`absolute inset-0 scale-150 rounded-full opacity-10 ${theme === 'dark' ? 'bg-red-500' : theme === 'forest' ? 'bg-emerald-500' : 'bg-sky-500'}`}></div>
-          <span className={`${themeColors.focus} relative z-10`}>
+          {/* Subtle focus highlight circle aligned with branding */}
+          <div className={`absolute inset-0 scale-150 rounded-full opacity-10 ${themeColors.glow}`}></div>
+          <span className={`${themeColors.focus} relative z-10 drop-shadow-[0_0_8px_rgba(236,72,153,0.3)]`}>
             {focusLetter}
           </span>
         </div>
