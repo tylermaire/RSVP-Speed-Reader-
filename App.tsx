@@ -552,7 +552,7 @@ const App: React.FC = () => {
             </div>
             
             <div className="flex flex-wrap justify-center items-center gap-6">
-              <a href="https://linkedin.com/in/tylermaire" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors group">
+              <a href="https://www.linkedin.com/in/tyler-maire/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-slate-500 hover:text-white transition-colors group">
                 <Linkedin size={18} />
                 <span className="text-[10px] font-black uppercase tracking-widest">Connect</span>
                 <ExternalLink size={10} className="opacity-0 group-hover:opacity-100 transition-all -translate-y-1" />
