@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
-import { Play, Pause, RotateCcw, Upload, Sliders, BrainCircuit, FileText, Bookmark as BookmarkIcon, Trash2, History, CheckCircle2, XCircle, RefreshCw, Palette, Quote, Copy, Check, AlertCircle, Layers, ChevronRight, Maximize2, Minimize2, Settings2 } from 'lucide-react';
+import { Play, Pause, RotateCcw, Upload, Sliders, BrainCircuit, FileText, Bookmark as BookmarkIcon, Trash2, History, CheckCircle2, XCircle, RefreshCw, Palette, Quote, Copy, Check, AlertCircle, Layers, ChevronRight, Maximize2, Minimize2, Settings2, Mail, User } from 'lucide-react';
 import { Token, Quiz, Bookmark, Theme, Citation, DocumentPart } from './types';
 import { DEFAULT_WPM, MIN_WPM, MAX_WPM, tokenize } from './constants';
 import { analyzeDocumentStructure, extractSegmentText, generateQuiz } from './services/geminiService';
@@ -493,12 +493,33 @@ const App: React.FC = () => {
           </section>
         )}
 
-        <footer className={`mt-8 mb-12 text-center text-slate-600 text-[10px] uppercase tracking-[0.4em] font-black shrink-0 flex items-center justify-center gap-8 opacity-60 transition-all duration-500 ${isZenMode ? 'opacity-0 pointer-events-none' : ''}`}>
-          <p>Sync Verified</p>
-          <div className="w-1.5 h-1.5 bg-slate-800 rounded-full" />
-          <p>Protocol RSVP v2.5</p>
-          <div className="w-1.5 h-1.5 bg-slate-800 rounded-full" />
-          <p>Core: Gemini 3 Flash</p>
+        <footer className={`mt-8 mb-16 flex flex-col items-center gap-6 transition-all duration-500 ${isZenMode ? 'opacity-0 pointer-events-none' : ''}`}>
+          {/* System Status Line */}
+          <div className="flex items-center justify-center gap-8 text-slate-600 text-[10px] uppercase tracking-[0.4em] font-black opacity-60">
+            <p>Sync Verified</p>
+            <div className="w-1.5 h-1.5 bg-slate-800 rounded-full" />
+            <p>Protocol RSVP v2.5</p>
+            <div className="w-1.5 h-1.5 bg-slate-800 rounded-full" />
+            <p>Core: Gemini 3 Flash</p>
+          </div>
+
+          {/* Author/Contact Branding Line */}
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-slate-500 text-[11px] font-bold tracking-[0.1em] transition-all">
+            <div className="flex items-center gap-2 group">
+              <User size={14} className="opacity-40 group-hover:opacity-100 transition-opacity" />
+              <span className="uppercase text-slate-400">Author:</span>
+              <span className="text-slate-300">Tyler Maire</span>
+            </div>
+            <div className="hidden sm:block w-px h-3 bg-slate-800" />
+            <a 
+              href="mailto:tyler.maire1@gmail.com" 
+              className="flex items-center gap-2 group hover:text-white transition-all"
+            >
+              <Mail size={14} className="opacity-40 group-hover:opacity-100 group-hover:text-blue-400 transition-all" />
+              <span className="uppercase text-slate-400">Contact:</span>
+              <span className="underline underline-offset-4 decoration-slate-700 group-hover:decoration-blue-500">tyler.maire1@gmail.com</span>
+            </a>
+          </div>
         </footer>
       </div>
 
