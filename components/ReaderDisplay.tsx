@@ -17,8 +17,8 @@ const ReaderDisplay: React.FC<ReaderDisplayProps> = ({ token, fontSize, theme })
 
   if (!token) {
     return (
-      <div className={`flex items-center justify-center h-48 border-y ${themeColors.border} ${themeColors.bg} rounded-lg`}>
-        <span className="text-slate-500 italic">Upload a file to start reading</span>
+      <div className={`flex items-center justify-center h-64 border-y-2 ${themeColors.border} ${themeColors.bg} rounded-xl shadow-inner`}>
+        <span className="text-slate-500 italic font-medium">Upload a document to begin</span>
       </div>
     );
   }
@@ -31,27 +31,41 @@ const ReaderDisplay: React.FC<ReaderDisplayProps> = ({ token, fontSize, theme })
   const suffix = word.substring(focusIdx + 1);
 
   return (
-    <div className={`relative flex flex-col items-center justify-center h-64 border-y-2 ${themeColors.border} ${themeColors.bg} overflow-hidden select-none transition-colors duration-500`}>
+    <div className={`relative flex flex-col items-center justify-center h-64 border-y-2 ${themeColors.border} ${themeColors.bg} overflow-hidden select-none transition-colors duration-500 rounded-xl shadow-2xl`}>
       {/* Centering Crosshair Guides */}
-      <div className={`absolute top-0 bottom-0 left-1/2 w-px ${themeColors.guide} pointer-events-none`}></div>
-      <div className={`absolute top-1/2 left-0 right-0 h-px ${themeColors.guide} pointer-events-none`}></div>
+      <div className={`absolute top-0 bottom-0 left-1/2 w-px ${themeColors.guide} pointer-events-none z-0`}></div>
+      <div className={`absolute top-1/2 left-0 right-0 h-px ${themeColors.guide} pointer-events-none z-0`}></div>
       
-      {/* RSVP Word Container */}
+      {/* RSVP Word Container using CSS Grid for perfect non-overlapping alignment */}
       <div 
-        className={`mono font-bold flex transition-all duration-75 ${token.isQuote ? 'italic text-amber-400' : themeColors.text}`}
-        style={{ fontSize: `${fontSize}px` }}
+        className={`mono font-bold grid grid-cols-[1fr_auto_1fr] w-full px-4 items-baseline transition-all duration-75 z-10 ${token.isQuote ? 'italic text-amber-400' : themeColors.text}`}
+        style={{ fontSize: `${fontSize}px`, lineHeight: 1 }}
       >
-        <div className="flex w-full items-baseline justify-center">
-           <span className="text-right inline-block" style={{ width: '45%' }}>{prefix}</span>
-           <span className={`${themeColors.focus} text-center inline-block`} style={{ width: '10%' }}>{focusLetter}</span>
-           <span className="text-left inline-block" style={{ width: '45%' }}>{suffix}</span>
+        <div className="text-right whitespace-pre overflow-visible pr-[0.05em]">
+          {prefix}
+        </div>
+        <div className="relative flex items-center justify-center">
+          {/* Subtle focus highlight circle */}
+          <div className={`absolute inset-0 scale-150 rounded-full opacity-10 ${theme === 'dark' ? 'bg-red-500' : theme === 'forest' ? 'bg-emerald-500' : 'bg-sky-500'}`}></div>
+          <span className={`${themeColors.focus} relative z-10`}>
+            {focusLetter}
+          </span>
+        </div>
+        <div className="text-left whitespace-pre overflow-visible pl-[0.05em]">
+          {suffix}
         </div>
       </div>
 
-      <div className="absolute bottom-4 right-4">
+      {/* Mode Indicators */}
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-4">
         {token.isQuote && (
-          <span className="text-xs bg-amber-500/20 text-amber-400 px-2 py-1 rounded border border-amber-500/30 font-medium uppercase tracking-wider">
-            Quote Mode
+          <span className="text-[10px] bg-amber-500/10 text-amber-500 px-2 py-0.5 rounded border border-amber-500/20 font-bold uppercase tracking-widest animate-pulse">
+            Dialogue
+          </span>
+        )}
+        {token.isPunctuation && (
+          <span className="text-[10px] bg-slate-500/10 text-slate-500 px-2 py-0.5 rounded border border-slate-500/20 font-bold uppercase tracking-widest">
+            Pause
           </span>
         )}
       </div>

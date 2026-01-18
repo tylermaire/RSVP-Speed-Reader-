@@ -40,3 +40,9 @@ export interface Citation {
   mla9: string;
   chicago: string;
 }
+
+export interface DocumentPart {
+  id: number;
+  title: string;
+  description: string;
+}
