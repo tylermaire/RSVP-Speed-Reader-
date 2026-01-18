@@ -1,5 +1,6 @@
+
 import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react';
-import { Play, Pause, RotateCcw, Upload, Sliders, BrainCircuit, FileText, Bookmark as BookmarkIcon, Trash2, History, CheckCircle2, XCircle, RefreshCw, Palette, Quote, Copy, Check, AlertCircle, Layers, ChevronRight, Maximize2, Minimize2, Settings2, Mail, User } from 'lucide-react';
+import { Play, Pause, RotateCcw, Upload, Sliders, BrainCircuit, FileText, Bookmark as BookmarkIcon, Trash2, History, CheckCircle2, XCircle, RefreshCw, Palette, Quote, Copy, Check, AlertCircle, Layers, ChevronRight, Maximize2, Minimize2, Settings2, Mail, User, Github } from 'lucide-react';
 import { Token, Quiz, Bookmark, Theme, Citation, DocumentPart } from './types';
 import { DEFAULT_WPM, MIN_WPM, MAX_WPM, tokenize } from './constants';
 import { analyzeDocumentStructure, extractSegmentText, generateQuiz } from './services/geminiService';
@@ -177,6 +178,7 @@ const App: React.FC = () => {
   const handleSaveBookmark = () => {
     if (!text || tokens.length === 0) return;
     const percentage = Math.round((currentIndex / (tokens.length - 1)) * 100);
+    // Fix: Corrected variable declaration from 'new Bookmark' to 'newBookmark'
     const newBookmark: Bookmark = {
       id: crypto.randomUUID(),
       index: currentIndex,
@@ -520,6 +522,17 @@ const App: React.FC = () => {
               <Mail size={14} className="opacity-40 group-hover:opacity-100 group-hover:text-blue-400 transition-all" />
               <span className="uppercase text-slate-400">Contact:</span>
               <span className="underline underline-offset-4 decoration-slate-700 group-hover:decoration-blue-500">tyler.maire1@gmail.com</span>
+            </a>
+            <div className="hidden sm:block w-px h-3 bg-slate-800" />
+            <a 
+              href="https://github.com/tylermaire/RSVP-Speed-Reader-" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 group hover:text-white transition-all"
+            >
+              <Github size={14} className="opacity-40 group-hover:opacity-100 group-hover:text-purple-400 transition-all" />
+              <span className="uppercase text-slate-400">Source:</span>
+              <span className="underline underline-offset-4 decoration-slate-700 group-hover:decoration-purple-500">GitHub</span>
             </a>
           </div>
         </footer>

@@ -12,6 +12,7 @@
   <img src="https://img.shields.io/badge/Powered_by-Google_Gemini_3_Flash-4285F4?style=for-the-badge&logo=google-gemini" alt="Gemini Powered">
   <img src="https://img.shields.io/badge/Tech-React_19-61DAFB?style=for-the-badge&logo=react" alt="React 19">
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License">
+  <a href="https://github.com/tylermaire/RSVP-Speed-Reader-"><img src="https://img.shields.io/badge/Source-GitHub-blueviolet?style=for-the-badge&logo=github" alt="GitHub Source"></a>
 </p>
 
 ---
@@ -39,6 +40,7 @@
 **Tyler Maire**
 - **Email:** [tyler.maire1@gmail.com](mailto:tyler.maire1@gmail.com)
 - **Web:** [rsvpspeedread.com](https://rsvpspeedread.com)
+- **GitHub:** [github.com/tylermaire/RSVP-Speed-Reader-](https://github.com/tylermaire/RSVP-Speed-Reader-)
 
 ---
 
