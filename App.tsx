@@ -276,7 +276,7 @@ const App: React.FC = () => {
               {isProcessing && (
                 <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-50 flex flex-col items-center justify-center rounded-xl border border-white/10">
                   <div className={`w-14 h-14 border-4 ${themeStyles.accent === 'indigo' ? 'border-blue-500' : themeStyles.accent === 'emerald' ? 'border-emerald-500' : 'border-sky-500'} border-t-transparent rounded-full animate-spin mb-4 shadow-[0_0_15px_rgba(59,130,246,0.5)]`} />
-                  <p className={`${themeStyles.accentText} font-bold tracking-widest text-xs uppercase animate-pulse`}>Optimizing Text Flow...</p>
+                  <p className={`${themeStyles.accentText} font-bold tracking-widest text-xs uppercase animate-pulse`}>Processing text...</p>
                 </div>
               )}
               
@@ -299,7 +299,7 @@ const App: React.FC = () => {
                         <Upload className={`w-8 h-8 ${themeStyles.accentText}`} />
                       </div>
                       <div className="text-center">
-                        <span className="text-white text-lg font-black uppercase tracking-tighter block">Initiate System</span>
+                        <span className="text-white text-lg font-black uppercase tracking-tighter block">Upload Document</span>
                         <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Select PDF or Text File</span>
                       </div>
                     </div>
@@ -355,11 +355,11 @@ const App: React.FC = () => {
               
               <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 relative z-10 transition-all duration-500 ${isZenMode ? 'opacity-30 hover:opacity-100' : 'opacity-100'}`}>
                 <div className="space-y-4">
-                  <div className="flex justify-between text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]"><span>Reading Velocity</span><span>{wpm} WPM</span></div>
+                  <div className="flex justify-between text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]"><span>Reading Speed</span><span>{wpm} WPM</span></div>
                   <input type="range" min={MIN_WPM} max={MAX_WPM} step={10} value={wpm} onChange={(e) => setWpm(parseInt(e.target.value))} className="w-full h-2 bg-black/30 rounded-lg appearance-none cursor-pointer" style={{ accentColor: theme === 'dark' ? '#ec4899' : theme === 'forest' ? '#10b981' : '#0ea5e9' }} />
                 </div>
                 <div className="space-y-4">
-                  <div className="flex justify-between text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]"><span>Visual Scale</span><span>{fontSize}px</span></div>
+                  <div className="flex justify-between text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]"><span>Font Size</span><span>{fontSize}px</span></div>
                   <input type="range" min={12} max={82} step={1} value={fontSize} onChange={(e) => setFontSize(parseInt(e.target.value))} className="w-full h-2 bg-black/30 rounded-lg appearance-none cursor-pointer" style={{ accentColor: theme === 'dark' ? '#ec4899' : theme === 'forest' ? '#10b981' : '#0ea5e9' }} />
                 </div>
               </div>
@@ -405,7 +405,7 @@ const App: React.FC = () => {
                       <div className="flex items-center gap-3"><History size={16} className={themeStyles.accentText} /><span>History</span></div>
                     </div>
                     {bookmarks.length === 0 ? (
-                      <div className="text-[10px] text-slate-600 font-bold uppercase tracking-widest py-8 text-center border border-dashed border-white/10 rounded-2xl bg-black/10">Empty Log</div>
+                      <div className="text-[10px] text-slate-600 font-bold uppercase tracking-widest py-8 text-center border border-dashed border-white/10 rounded-2xl bg-black/10">No bookmarks yet</div>
                     ) : (
                       <div className="space-y-2">
                         {bookmarks.map(b => (
@@ -422,9 +422,9 @@ const App: React.FC = () => {
                   </div>
 
                   <div className={`p-5 ${themeStyles.bg} rounded-2xl border ${themeStyles.border} space-y-4 shadow-inner relative overflow-hidden`}>
-                    <h3 className="text-white text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-3"><BrainCircuit size={16} className={themeStyles.accentText}/>Retention Unit</h3>
+                    <h3 className="text-white text-[11px] font-black uppercase tracking-[0.2em] flex items-center gap-3"><BrainCircuit size={16} className={themeStyles.accentText}/>Quiz</h3>
                     <button disabled={!text || isProcessing} onClick={handleGenerateQuiz} className={`w-full ${themeStyles.accentBg} ${themeStyles.button} disabled:opacity-50 transition-all text-white py-3 rounded-xl text-[11px] font-black uppercase tracking-[0.2em] shadow-xl active:scale-95`}>
-                      Launch Assessment
+                      Check Comprehension
                     </button>
                   </div>
                 </div>
@@ -440,7 +440,7 @@ const App: React.FC = () => {
               <div className={`flex items-center justify-between p-8 border-b ${themeStyles.border} bg-black/20`}>
                 <div className="flex items-center gap-4">
                   <div className={`p-3 rounded-2xl ${themeStyles.accentBg} bg-opacity-20`}><Quote className={themeStyles.accentText} size={24} /></div>
-                  <div><h2 className="text-white font-black text-xl tracking-tighter uppercase italic">Citations</h2><p className="text-[10px] text-slate-500 uppercase tracking-[0.3em] font-black mt-1">Academic Protocol Library</p></div>
+                  <div><h2 className="text-white font-black text-xl tracking-tighter uppercase italic">Citations</h2><p className="text-[10px] text-slate-500 uppercase tracking-[0.3em] font-black mt-1">Academic Formats</p></div>
                 </div>
               </div>
               <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -466,7 +466,7 @@ const App: React.FC = () => {
              <div className={`${themeStyles.surface} border ${themeStyles.border} w-full max-w-2xl rounded-3xl p-8 sm:p-12 shadow-[0_0_100px_rgba(0,0,0,0.5)] animate-in zoom-in-95 duration-500`}>
                 <div className="flex items-center justify-between mb-12">
                    <div>
-                      <h2 className="text-white text-2xl font-black tracking-tighter uppercase">Assessment</h2>
+                      <h2 className="text-white text-2xl font-black tracking-tighter uppercase">Comprehension Quiz</h2>
                       <p className="text-slate-500 text-[10px] font-bold uppercase tracking-[0.3em] mt-1">{quiz.title}</p>
                    </div>
                    <button onClick={() => setShowQuiz(false)} className="p-3 bg-white/5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-all"><XCircle size={28} /></button>
@@ -507,14 +507,14 @@ const App: React.FC = () => {
                    <div className="flex gap-2">
                       {Object.keys(selectedAnswers).length === quiz.questions.length && (
                          <div className="text-center">
-                            <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest block mb-1">Score Card</span>
+                            <span className="text-slate-500 text-[10px] font-black uppercase tracking-widest block mb-1">Score</span>
                             <span className="text-4xl font-black text-white">
                                {quiz.questions.filter((q, idx) => selectedAnswers[idx] === q.answer).length} / {quiz.questions.length}
                             </span>
                          </div>
                       )}
                    </div>
-                   <button onClick={() => setShowQuiz(false)} className={`px-12 py-4 rounded-2xl ${themeStyles.accentBg} text-white font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-105 active:scale-95 transition-all`}>Complete Assessment</button>
+                   <button onClick={() => setShowQuiz(false)} className={`px-12 py-4 rounded-2xl ${themeStyles.accentBg} text-white font-black uppercase tracking-widest text-xs shadow-2xl hover:scale-105 active:scale-95 transition-all`}>Close Quiz</button>
                 </div>
              </div>
           </div>
@@ -528,7 +528,7 @@ const App: React.FC = () => {
                 <Logo className="h-8 w-auto" />
               </div>
               <p className="text-[10px] text-slate-600 font-bold uppercase tracking-[0.3em] text-center md:text-left">
-                Empowering Human Cognitive Bandwidth • © 2024
+                A tool for faster reading and better comprehension • © {new Date().getFullYear()}
               </p>
             </div>
             
